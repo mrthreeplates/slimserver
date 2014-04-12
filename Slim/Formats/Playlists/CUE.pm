@@ -202,7 +202,7 @@ sub parse {
 
 		# Also - check the original file for any information that may
 		# not be in the cue sheet. Bug 2668
-		for my $attribute (qw(CONTENT_TYPE ARTIST ALBUM YEAR GENRE REPLAYGAIN_ALBUM_GAIN REPLAYGAIN_ALBUM_PEAK ARTISTSORT ALBUMSORT COMPILATION)) {
+		for my $attribute (qw(CONTENT_TYPE ARTIST ALBUM YEAR GENRE DISC DISCC REPLAYGAIN_ALBUM_GAIN REPLAYGAIN_ALBUM_PEAK ARTISTSORT ALBUMSORT COMPILATION)) {
 
 			if (!$cuesheet->{$attribute}) {
 
@@ -269,7 +269,7 @@ sub parse {
 		}
 
 		# Merge in file level attributes
-		for my $attribute (qw(CONTENT_TYPE ARTIST ALBUM YEAR GENRE COMMENT REPLAYGAIN_ALBUM_GAIN REPLAYGAIN_ALBUM_PEAK ARTISTSORT ALBUMSORT COMPILATION)) {
+		for my $attribute (qw(CONTENT_TYPE ARTIST ALBUM YEAR GENRE DISC DISCC COMMENT REPLAYGAIN_ALBUM_GAIN REPLAYGAIN_ALBUM_PEAK ARTISTSORT ALBUMSORT COMPILATION)) {
 
 			if (!exists $track->{$attribute} && defined $cuesheet->{$attribute}) {
 
